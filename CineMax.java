@@ -4,7 +4,7 @@ public class CineMax {
         
         String age, name, tickets;
         int yourAge, yourTicket, totalTicket;
-        final int fixedPrice = 12;
+        final int fixedPrice = 30;
         
         name = JOptionPane.showInputDialog(null, "Please enter your name: ", "Name", JOptionPane.QUESTION_MESSAGE);
         age = JOptionPane.showInputDialog(null, "Enter your age: ", "Age", JOptionPane.INFORMATION_MESSAGE);
