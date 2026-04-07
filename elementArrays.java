@@ -1,6 +1,5 @@
 import java.util.Scanner;
 public class elementArrays {
-    
     public static void main(String[] args) {
         
         Scanner s = new Scanner(System.in);

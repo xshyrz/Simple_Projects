@@ -23,5 +23,4 @@ public class simpleTwoNumCal {
         System.out.println("Multiply    : " + mul);
         System.out.println("Divide      : " + div);
     }
-    
 }

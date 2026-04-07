@@ -14,7 +14,6 @@ public class employeeSalaryCalcuator {
         double increment = s.nextDouble();
 
         double newSalary = calculateSalary(oldSalary, increment);
-
         displaySalary(employeeName, oldSalary, newSalary);
     }
 

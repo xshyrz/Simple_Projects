@@ -6,7 +6,6 @@ public class circle {
         
         consCircle circle2 = new consCircle(10);  
         System.out.println("The area of the circle with radius of " + circle2.radius + " is " + circle2.getArea());       
-        
     }
 }
 
