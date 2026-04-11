@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class employeeSalaryCalcuator {
+public class employeeSalaryCal {
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
