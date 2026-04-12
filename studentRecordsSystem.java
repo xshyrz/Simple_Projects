@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -37,6 +38,20 @@ public class studentRecordsSystem {
             myWriter.close();
             
         } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+
+        // viewing all student records into the file
+            System.out.println("\nAll student data into the file: ");
+        try {
+            Scanner readFile = new Scanner(myfile);
+            while (readFile.hasNextLine()) {
+            String data = readFile.nextLine();
+            System.out.println(data);
+            }
+            readFile.close();
+            
+        } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
         }
     }
