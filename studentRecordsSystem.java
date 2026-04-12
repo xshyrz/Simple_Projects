@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class studentRecordsSystem {
-
     public static void main(String[] args) {
         
         Scanner s = new Scanner(System.in);
@@ -54,5 +53,32 @@ public class studentRecordsSystem {
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
         }
+
+        // searching student by id
+        System.out.print("\nEnter student ID to search: ");
+        String idSearch = s.nextLine();
+        boolean found = false;
+        if (!myfile.exists() || !myfile.canRead()) {
+            System.out.println("Error: File does not exist or cannot be read.");
+        
+        } else {
+          try (Scanner readFile = new Scanner(myfile)) {
+            while (readFile.hasNextLine()) {
+                String data = readFile.nextLine();
+                String[] parts = data.split(",");
+                if (parts.length >= 2 && parts[1].trim().equals(idSearch)) {
+                    System.out.println("\nStudent found: " + data);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Student with ID " + idSearch + " not found.");
+            }
+            readFile.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+        }
+      }
     }
 }
