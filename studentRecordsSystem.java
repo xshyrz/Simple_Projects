@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,6 +18,23 @@ public class studentRecordsSystem {
             } else {
             System.out.println("File already exists.");
             }
+            
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+        }
+
+        // asking the user to input record
+        try {
+            FileWriter myWriter = new FileWriter(myfile, true);
+            System.out.print("\nEnter your name: ");
+            String name = s.nextLine();
+            System.out.print("Enter your ID: ");
+            String id = s.nextLine();
+            System.out.print("Enter your grade: ");
+            String grade = s.nextLine();
+            myWriter.write(name + ", " + id + ", " + grade + "\n"); // Write in comma-separated format
+            System.out.println("\nData written successfully to the file.");
+            myWriter.close();
             
         } catch (IOException e) {
             System.out.println("An error occurred.");
