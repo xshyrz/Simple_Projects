@@ -163,3 +163,56 @@ class OzTrainRouteSimulator:
         print(f" - First Station: {self.head.data}")
         print(f" - Last Station: {self.tail.data}")
         print("Route is circular and stable")
+        
+if __name__ == "__main__":
+    route_simulator = OzTrainRouteSimulator()
+ 
+    while True:
+        print("\n===================================")
+        print("     OZ TRAIN ROUTE SIMULATOR")
+        print("===================================")
+        print("[1] Add Station at Start")
+        print("[2] Add Station at End")
+        print("[3] Insert Station After")
+        print("[4] Delete Last Staation")
+        print("[5] Traverse Forward")
+        print("[6] Traverse Backward")
+        print("[7] Find Station")
+        print("[8] Show Route Status")
+        print("[9] Exit")
+        choice = (int(input("\nEnter choice: ")))
+       
+        if choice == 1:
+            station_name = input("Enter station name: ")
+            route_simulator.AddStationAtStart(station_name)
+            
+        elif choice == 2:
+            station_name = input("Enter station name: ")
+            route_simulator.AddStationAtEnd(station_name)
+            
+        elif choice == 3:
+            target_station = input("Insert after which station? ")
+            new_station = input("Enter new Station Name to Insert: ")
+            route_simulator.InsertStationAfter(target_station, new_station)
+            
+        elif choice == 4:
+            route_simulator.DeleteLastStation()
+            
+        elif choice == 5:
+            route_simulator.TraverseForward()
+            
+        elif choice == 6:
+            route_simulator.TraverseBackward()
+            
+        elif choice == 7:
+            station_name = input("Find Station: ")
+            route_simulator.FindStation(station_name)
+            
+        elif choice == 8:
+            route_simulator.ShowCurrentRouteStatus()
+            
+        elif choice == 9:
+            print("Exiting Oz Train Route Simulator...")
+            break
+        else:
+            print("Invalid choice!\n")
